@@ -1,0 +1,15 @@
+class Solution {
+    fun reverse(x: Int): Int {
+        var isNegative = false
+        var input = x.toString()
+        if(x < 0){
+            isNegative = true
+            input = input.substring(1, input.length)
+        }
+        try{
+            return if(isNegative) input.reversed().toInt() * -1 else input.reversed().toInt() 
+        }catch(exception: NumberFormatException){
+            return 0
+        }
+    }
+}
